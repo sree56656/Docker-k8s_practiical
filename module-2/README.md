@@ -28,3 +28,30 @@ $ docker run -d -p 3000:80 `
   feedback:volume
 
   ![alt text](image-1.png)
+
+
+$ docker run -d -p 3000:80 `
+  -v feedback:/app/feedback `
+  -v node_modules:/app/node_modules `
+  -v "D:\Interview-codes\Docker-k8s-udemy\module-2\data-volumes-01-starting-setup:/app:ro" `
+  feedback:volume
+
+Bind mount doesn't managed by docker
+Anonymous and Named - managed by docker
+
+Anonymous - stays untill the container runs
+Named - 
+
+Memory Tip:
+
+Bind Mount = Development (live code sync)
+Named Volume = Persistent application/database data
+Anonymous Volume = Docker-managed temporary persistence
+
+Anonymous Volume: Auto-created, persistent data, no real-time code sync.
+Named Volume: User-named, persistent data, reusable across containers, no real-time code sync.
+Bind Mount: Uses host directory, persistent on host, supports real-time code sync.
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)
